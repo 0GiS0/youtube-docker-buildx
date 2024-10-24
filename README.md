@@ -21,7 +21,7 @@ BuildKit tiene soporte integrado para la construcción de imágenes de Docker pa
 Para que lo veas con un ejemplo, aquí tienes un comando de `docker buildx` que construye una imagen de Docker para las arquitecturas x86 y ARM:
 
 ```bash
-docker buildx build --platform linux/amd64,linux/arm64 -t halloween:v1 .
+docker build --platform linux/amd64,linux/arm64 -t halloween:v1 .
 ```
 
 Si ahora ejecutas `docker images`, verás que tienes una sola imagen de Docker que es compatible con las arquitecturas x86 y ARM.
@@ -58,7 +58,7 @@ docker run -d -p 8080:80 halloween:multicontext
 ```
 
 ```bash
-docker buildx build \
+docker build \
 --build-context app=./halloween-content \
 --build-context config=https://github.com/0GiS0/youtube-docker-buildx.git#main \
 -t halloween:multicontext-remote \
@@ -116,13 +116,13 @@ BuildKit tiene un sistema de caché de construcción mejorado que es más rápid
 Para que lo veas con un ejemplo, aquí tienes un comando de `docker buildx` que utiliza el sistema de caché de construcción de Docker para acelerar la construcción de una imagen de Docker:
 
 ```bash
-docker buildx build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-to type=local,dest=./cache -t halloween:v1 .
+docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-to type=local,dest=./cache -t halloween:v5 .
 ```
 
 Y ahora podemos construir la imagen de Docker utilizando la caché de construcción de Docker:
 
 ```bash
-docker buildx build --cache-from type=local,src=./cache -t halloween:v2 .
+docker build --cache-from type=local,src=./cache -t halloween:v6 .
 ```
 
 Esta funcionalidad es particularmente útil para grandes proyectos de construcción de imágenes de Docker, donde la construcción de imágenes puede llevar mucho tiempo.
@@ -135,7 +135,7 @@ Este es un ejemplo con Azure Blob Storage Cache (Documentación aquí: https://g
 Primero creamos una cuenta de Azure Storage:
 
 ```bash
-STORAGE_ACCOUNT_NAME=fordockercache
+STORAGE_ACCOUNT_NAME=dockercachedemo
 RESOURCE_GROUP=youtube-docker-buildx
 LOCATION=spaincentral
 
@@ -158,7 +158,7 @@ Cuando no le especificamos el driver utiliza el que se llama `docker-container` 
 
 
 ```bash
-docker buildx build --cache-to type=azblob,name=halloween:v1,account_url=$STORAGE_ACCOUNT_URL,secret_access_key=$STORAGE_ACCOUNT_KEY,mode=max -t halloween:v1 --builder mybuilder .
+docker build --cache-to type=azblob,name=halloween,account_url=$STORAGE_ACCOUNT_URL,secret_access_key=$STORAGE_ACCOUNT_KEY,mode=max -t halloween:v7 --builder mybuilder .
 ```
 
 
