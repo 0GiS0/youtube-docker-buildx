@@ -135,7 +135,17 @@ docker run -d -p 8080:80 halloween:multicontext
 ```
 
 ```bash
-docker buildx build --build-context app=./halloween-content --build-context config=./configuration -t halloween:multicontext -f Dockerfile.multicontext .
+docker buildx build \
+--build-context app=./halloween-content \
+--build-context config=https://github.com/0GiS0/youtube-docker-buildx.git#main \
+-t halloween:multicontext-remote \
+-f Dockerfile.multicontext.remote .
+```
+
+y lo probamos:
+
+```bash
+docker run -d -p 8081:80 halloween:multicontext-remote
 ```
 
 
@@ -143,5 +153,30 @@ docker buildx build --build-context app=./halloween-content --build-context conf
 
 Para que lo veas con un ejemplo, aquí tienes un comando de `docker buildx` que construye una imagen de Docker utilizando el frontend de Dockerfile BuildKit:
 
-```bash
+Lo primero es que nos creamos un builder que use `docker-container`:
 
+```bash
+docker buildx create --name wasmbuilder --use
+docker buildx inspect --bootstrap
+```
+
+Y ahora construimos la imagen:
+
+```bash
+docker buildx build -t 0gis0/wasm-hello --platform wasi/wasm ./wasm --push
+```
+
+Y si ahora inspeccionamos la imagen veremos que tiene la plataforma `wasi/wasm`:
+
+```bash
+docker buildx imagetools inspect 0gis0/wasm-hello 
+```
+
+Y podemos ejecutarlo si habilitamos `docker wasm`. Para ello hay que ir a `Docker Desktop` -> `Settings` -> `General` > `Use containerd for pulling and storing images` > `Features in development` -> `Enable Wasm` y reiniciar Docker Desktop.
+
+
+```bash
+docker run \
+--runtime=io.containerd.wasmtime.v1 \
+--platform=wasi/wasm 0gis0/wasm-hello
+```

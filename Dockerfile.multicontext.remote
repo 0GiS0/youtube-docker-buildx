@@ -1,0 +1,15 @@
+FROM nginx
+
+WORKDIR  /var/www/html
+
+# Copy src from context app
+COPY --from=app . .
+
+# COPY config files from context config
+COPY --from=config configuration/nginx.conf /etc/nginx/nginx.conf
+
+# Expose the port
+EXPOSE 80
+
+# Start the server
+CMD ["nginx", "-g", "daemon off;"]
