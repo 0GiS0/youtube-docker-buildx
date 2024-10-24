@@ -1,0 +1,244 @@
+@charset "UTF-8";
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+*,
+*:before,
+*:after {
+  position: relative;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: ghostwhite;
+}
+
+body {
+  font-size: 1.618rem;
+}
+
+.title {
+  position: absolute;
+  font-family: "Rancho", sans-serif;
+  text-align: center;
+  top: 22%;
+  left: 0;
+  right: 0;
+  font-size: 4rem;
+  color: #333;
+  transform: translateY(-22%);
+}
+.title span {
+  font-family: "Open Sans", sans-serif;
+  display: block;
+  font-size: 1.4rem;
+  color: #555;
+}
+.title .fine-print {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40rem;
+}
+
+.skull {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  width: 25rem;
+  height: 25rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #e74c3c;
+  box-shadow: 0 0.25rem 0 0.25rem rgba(0, 0, 0, 0.15),
+    inset 0 0.5rem 0 0rem rgba(0, 0, 0, 0.1),
+    inset -0.5rem 0rem 0 0rem rgba(0, 0, 0, 0.1),
+    inset 0.5rem 0rem 0 0rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.28s ease-in-out;
+}
+.skull:hover {
+  transform: translateY(-50%) rotateZ(-180deg);
+}
+.skull:active {
+  transform: translateY(-50%) rotateZ(-180deg) rotateY(-180deg);
+}
+.skull:before {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+.skull:after {
+  content: "❤";
+  position: absolute;
+  top: -0.75rem;
+  left: 0;
+  right: 0;
+  font-size: 10rem;
+  color: #f1c40f;
+  text-align: center;
+  text-stroke: 3px #3498db;
+}
+.skull .decor {
+  position: absolute;
+  display: block;
+  font-size: 20rem;
+  z-index: 10;
+}
+.skull .decor:nth-child(1) {
+  left: -8rem;
+  color: #3498db;
+  text-stroke: 2px #f1c40f;
+}
+.skull .decor:nth-child(2) {
+  right: -7.25rem;
+  color: #f1c40f;
+  text-stroke: 2px #3498db;
+}
+.skull .eyes {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-38%);
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.skull .eye {
+  position: absolute;
+  width: 3.75rem;
+  height: 4.9875rem;
+  background-color: #2b2b2b;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.skull .eye:first-child {
+  left: 25%;
+  transform: translateY(-40%) rotate(15deg);
+}
+.skull .eye:last-child {
+  right: 25%;
+  transform: translateY(-40%) rotate(-15deg);
+}
+.skull .eye:last-child .symbol {
+  color: #3498db;
+  text-stroke: 2px #f1c40f;
+}
+.skull .eye .symbol {
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 3.8rem;
+  color: #f1c40f;
+  text-stroke: 2px #3498db;
+}
+.skull .nose,
+.skull .nose:before,
+.skull .nose:after {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  background: #2b2b2b;
+  border-top-right-radius: 60%;
+  z-index: 10;
+}
+.skull .nose:before,
+.skull .nose:after {
+  content: "";
+  position: absolute;
+}
+.skull .nose {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 9rem;
+  margin: 0 auto;
+  transform: rotate(-60deg) skewX(-30deg) scale(1, 0.866);
+}
+.skull .nose:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707)
+    translate(0, -50%);
+}
+.skull .nose:after {
+  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+}
+.skull .mustache {
+  position: absolute;
+  bottom: 2.5rem;
+  left: -1.8rem;
+  right: 0;
+  font-size: 7rem;
+  letter-spacing: -1.75rem;
+  z-index: 100;
+  text-align: center;
+}
+.skull .mustache span:first-child {
+  color: #f1c40f;
+}
+.skull .mustache span:last-child {
+  color: #3498db;
+}
+.skull .teeth {
+  position: absolute;
+  width: 100%;
+  height: 6rem;
+  bottom: 0rem;
+  background-color: #2b2b2b;
+}
+.skull .teeth:before,
+.skull .teeth:after {
+  content: "⬢";
+  position: absolute;
+  top: -6.5rem;
+  font-size: 20rem;
+  color: #2b2b2b;
+  z-index: -1;
+}
+.skull .teeth:before {
+  left: -9.75rem;
+}
+.skull .teeth:after {
+  right: -9.75rem;
+}
+.skull .teeth .top,
+.skull .teeth .bottom {
+  width: 50%;
+  height: 3rem;
+  margin: 0 auto;
+}
+.skull .teeth .top {
+  top: 0rem;
+}
+.skull .teeth .top .tooth {
+  border-radius: 0 0 50% 50%;
+  box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.18);
+}
+.skull .teeth .bottom {
+  top: 1rem;
+}
+.skull .teeth .bottom .tooth {
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.18);
+}
+.skull .teeth .tooth {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  background-color: #e74c3c;
+}
