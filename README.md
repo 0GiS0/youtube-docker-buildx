@@ -161,4 +161,3 @@ Para ello vamos a verlo con un ejemplo común como puede ser una aplicación en 
 docker build -t nodejs-app nodejs-app
 ```
 
-```bash
