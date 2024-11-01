@@ -1,14 +1,16 @@
-# Diferencias entre Docker Build y Docker Buildx o BuildKit
+# Cinco 🖐🏻 funcionalidades avanzadas que no sabías de BuildKit
+
+¡Hola developer 👋🏻! Este vídeo contiene las demos mostradas en mi vídeo de mi canal de YouTube [14. Cinco 🖐🏻 funcionalidades avanzadas que no sabías de BuildKit](https://youtu.be/8QfiZOgHQ50).
+
+[![14. Cinco 🖐🏻 funcionalidades avanzadas que no sabías de BuildKit](docs/images/cinco%20🖐🏻%20características%20que%20no%20sabías%20de%20buildkit.png)](https://youtu.be/8QfiZOgHQ50)
+
+## Introducción
 
 Desde la versión 18.09 de Docker, se introdujo una nueva funcionalidad llamada BuildKit, que es un nuevo motor de construcción de imágenes de Docker. Este motor de construcción es más rápido y eficiente que el motor de construcción de imágenes de Docker tradicional. BuildKit es un proyecto de código abierto que se puede encontrar en GitHub.
 
-De hecho, cuando ejecutas el comando `docker build` en Docker 18.09 o posterior, en realidad estás utilizando BuildKit. 
+BuildKit tiene una serie de características adicionales que no están disponibles en el motor de construcción de imágenes de Docker tradicional. Para acceder a estas características adicionales, debes utilizar el comando `docker buildx` en lugar del comando `docker build`.
 
-Sin embargo, BuildKit tiene una serie de características adicionales que no están disponibles en el motor de construcción de imágenes de Docker tradicional. Para acceder a estas características adicionales, debes utilizar el comando `docker buildx` en lugar del comando `docker build`.
-
-En este artículo, veremos las diferencias entre `docker build` y `docker buildx` o BuildKit, y cómo puedes utilizar BuildKit para mejorar tus flujos de trabajo de construcción de imágenes de Docker.
-
-## 5 Mejoras de BuildKit que quiz´as no conocías
+En este repositorio te comparto las 5 cosas que te mostré en el vídeo que puedes hacer con BuildKit y que no podías hacer con el motor de construcción de imágenes de Docker tradicional.
 
 A continuación se presentan algunas de las diferencias clave entre `docker build` y `docker buildx` o BuildKit:
 
