@@ -14,7 +14,7 @@ En este repositorio te comparto las 5 cosas que te mostré en el vídeo que pued
 
 A continuación se presentan algunas de las diferencias clave entre `docker build` y `docker buildx` o BuildKit:
 
-### **1. Soporte para múltiples plataformas 🏗️**
+## 1. Soporte para múltiples plataformas 🏗️
 
 BuildKit tiene soporte integrado para la construcción de imágenes de Docker para múltiples plataformas. Esto significa que puedes construir una sola imagen de Docker que funcione en diferentes arquitecturas de CPU, como x86, ARM y PPC. Con BuildKit, puedes construir imágenes de Docker para diferentes plataformas utilizando un solo comando, lo que simplifica el proceso de construcción de imágenes multiplataforma.
 
@@ -39,7 +39,7 @@ docker images --tree
 ```
 
 
-### **2. Poder tener multiples contextos de construcción 🪐 ** 
+### 2. Poder tener multiples contextos de construcción 🪐
 
 BuildKit te permite tener múltiples contextos de construcción, lo que te permite construir imágenes de Docker en diferentes entornos de construcción. Con BuildKit, puedes tener múltiples contextos de construcción que contienen diferentes configuraciones de construcción, como variables de entorno, argumentos de construcción y opciones de construcción.
 
@@ -74,7 +74,7 @@ docker run -d -p 8081:80 halloween:multicontext-remote
 ```
 
 
-### **3. Crear/Configurar tus propios builders 🏞️** 
+### 3. Crear/Configurar tus propios builders 🏞️
 
 
 BuildKit tiene soporte integrado para plugins de construcción, lo que te permite extender las capacidades de construcción de imágenes de Docker con plugins personalizados. Con BuildKit, puedes utilizar plugins de construcción para realizar tareas específicas durante la construcción de imágenes de Docker, como la compilación de código, la generación de documentación o la ejecución de pruebas.
@@ -111,7 +111,7 @@ Y ahora para poder usar este driver, que no es el que tenemos configurado por de
 docker buildx build --builder cloud-0gis0-returngis -t halloween:v3 .
 ```
 
-### **4. Cache de construcción mejorado ♻️ **
+### 4. Cache de construcción mejorado ♻️
 
 BuildKit tiene un sistema de caché de construcción mejorado que es más rápido y eficiente que el sistema de caché de construcción de Docker tradicional. Con BuildKit, puedes utilizar el sistema de caché de construcción de Docker de forma más eficiente, lo que te permite reducir el tiempo de construcción de tus imágenes de Docker.
 
@@ -164,7 +164,7 @@ docker build --cache-to type=azblob,name=halloween,account_url=$STORAGE_ACCOUNT_
 ```
 
 
-### **5. Montaje directo de datos  **
+### 5. Montaje directo de datos
 
 
 BuildKit te permite montar datos directamente en el proceso de construcción, lo que te permite acceder a los datos de forma más eficiente durante la construcción de imágenes de Docker. Con BuildKit, puedes montar datos directamente en el proceso de construcción utilizando la opción `--mount`.
