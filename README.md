@@ -2,7 +2,7 @@
 
 ¡Hola developer 👋🏻! Este vídeo contiene las demos mostradas en mi vídeo de mi canal de YouTube [14. Cinco 🖐🏻 funcionalidades avanzadas que no sabías de BuildKit](https://youtu.be/8QfiZOgHQ50).
 
-[![14. Cinco 🖐🏻 funcionalidades avanzadas que no sabías de BuildKit](docs/images/cinco%20🖐🏻%20características%20que%20no%20sabías%20de%20buildkit.png)](https://youtu.be/8QfiZOgHQ50)
+[![14. Cinco 🖐🏻 funcionalidades avanzadas que no sabías de BuildKit](docs/images/5%20características%20que%20no%20sabías%20de%20buildkit.png)](https://youtu.be/8QfiZOgHQ50)
 
 ## Introducción
 
